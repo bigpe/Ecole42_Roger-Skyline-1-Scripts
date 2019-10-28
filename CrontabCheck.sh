@@ -8,8 +8,12 @@ LANG=`echo $LANG | awk -F "." '{print $1}'`
 if [ $LANG = "en_US" ]
 then
 MOD="Modify: "
-else
+elif [ $LANG = "ru_RU" ]
+then
 MOD="Изменён: "
+else
+echo "Uknown Terminal Language, exit..."
+exit
 fi
 echo ${ORANGE}Searching Log File...${NC}
 if [ -f $LOG ]
