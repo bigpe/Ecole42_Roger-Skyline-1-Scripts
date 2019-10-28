@@ -1,0 +1,6 @@
+users=`cat /etc/group | grep sudo | awk -F ":" '{print $4}' | sed "s/,/ /g"`
+echo Sys Admins:
+for u in $users
+do
+echo $u
+done
